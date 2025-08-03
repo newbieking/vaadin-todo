@@ -45,6 +45,12 @@ tasks.named("processResources") {
     dependsOn("copyVaadinStyles")
 }
 
+tasks.named<Jar>("jar"){
+    manifest {
+        attributes(mapOf("Main-Class" to "org.example.MainKt"))
+    }
+}
+
 
 tasks.test {
     useJUnitPlatform()
